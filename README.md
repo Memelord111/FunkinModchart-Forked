@@ -13,6 +13,7 @@ Such as:
 - Bad architecture in general, there was no clear goal of anything, instead on polishing or fixing bugs i was always adding new stuff.
 
 Doesn't mean it can't be used rn, but expect constant bugs or problems to deal with.
+If you still use this, stay tuned for **FlxModchart** alpha release.
 
 *— axel*
 
