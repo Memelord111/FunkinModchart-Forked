@@ -1,3 +1,21 @@
+<h1 style="text-align: center;">⚠ UNMANTAINED, USE IT UNDER YOUR OWN RISK ⚠</h1>
+
+This is currenly unmantained and in queue to be deprecated, you can use it, but you may deal with rendering problems a lot.
+Such as:
+- Inconsistent camera resolving
+- Wrong or null FlxSprite/FlxFrame properties implementation on the renderers.
+- Vertex coloring issues (this might be a flixel "problem" with batching, in theory)
+- Constant frame drops/spikes.
+- Poor rendering customization.
+- No way of rendering a no-arrow FlxSprite (that's an important feature in NotITG (actors))
+- Poor standalone layer +hold rendering only works with segmented holds (the way 0.2.7 Funkin managed holds, which its still used on most of popular FNF engine, but that "limited" the engines that could use it, at least without work arounds).
+- Constantly breaking changes (also no assert test)
+- Bad architecture in general, there was no clear goal of anything, instead on polishing or fixing bugs i was always adding new stuff.
+
+Doesn't mean it can't be used rn, but expect constant bugs or problems to deal with.
+
+- Axel
+
 # ![FunkinModchart Logo](https://raw.githubusercontent.com/theoo-h/FunkinModchart/refs/heads/main/github/imagotipo.png)
 <p align="center">
   <b>A powerful modcharting backend for <a href="https://ninja-muffin24.itch.io/funkin">Friday Night Funkin'</a> and other HaxeFlixel-based VSRGs — built by modders, for modders.</b>
