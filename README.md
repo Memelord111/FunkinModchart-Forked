@@ -14,7 +14,7 @@ Such as:
 
 Doesn't mean it can't be used rn, but expect constant bugs or problems to deal with.
 
-- Axel
+*— axel*
 
 # ![FunkinModchart Logo](https://raw.githubusercontent.com/theoo-h/FunkinModchart/refs/heads/main/github/imagotipo.png)
 <p align="center">
