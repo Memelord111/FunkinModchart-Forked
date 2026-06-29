@@ -202,6 +202,8 @@ class CtxRenderer {
 		while (i < count) {
 			var item = queue[i];
 			for (camera in item.cameras) {
+				@:privateAccess if (camera._bounds == null)
+					continue; // Temporary fix by riconuts0000 on discord
 				var dc = camera.startTrianglesBatch(item.graphic, item.antialiasing, item.isColored, item.blend, item.hasColorOffsets, item.shader);
 				@:privateAccess final cameraBounds = camera._bounds.set(camera.viewMarginLeft, camera.viewMarginTop, camera.viewWidth, camera.viewHeight);
 
