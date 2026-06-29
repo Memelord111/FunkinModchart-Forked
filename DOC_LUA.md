@@ -161,14 +161,6 @@ setAddNow(name, value, player, field);
 */
 callback(beat, funcName, field);
 /*
- * Same as `callback`. Schedules a Lua function to be called at the specified beat.
- *
- * beat:Float      The beat number where the event will be executed.
- * funcName:String The name of the Lua function to call.
- * field:Int       The playfield number (-1 by default).
-*/
-scheduleCallback(beat, funcName, field);
-/*
  * Repeats the execution of the given Lua function for the specified duration,
    starting at the given beat.
  *
