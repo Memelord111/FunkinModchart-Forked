@@ -273,6 +273,10 @@ class Psych implements IAdapter {
 				if (Manager.instance != null)
 					Manager.instance.callback(beat, function(_) _fl.call(funcName, []), field);
 			});
+			Lua_helper.add_callback(lua, 'scheduleCallback', function(beat:Float, funcName:String, ?field:Int = -1) {
+				if (Manager.instance != null)
+					Manager.instance.scheduleCallback(beat, function(_) _fl.call(funcName, []), field);
+			});
 			Lua_helper.add_callback(lua, 'repeater', function(beat:Float, length:Float, funcName:String, ?field:Int = -1) {
 				if (Manager.instance != null)
 					Manager.instance.repeater(beat, length, function(_) _fl.call(funcName, []), field);

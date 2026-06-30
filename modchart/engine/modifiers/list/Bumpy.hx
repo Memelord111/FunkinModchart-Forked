@@ -57,7 +57,6 @@ class Bumpy extends Modifier {
 	private inline function applyBumpy(curPos:Vector3, params:ModifierParameters, axisIdx:Int, realAxisIdx:Int) {
 		final lane = params.lane;
 		final player = params.player;
-
 		var offset = getUnsafe(_bumpyOffID[axisIdx], player);
 		var period = getUnsafe(_bumpyPeriodID[axisIdx], player);
 		var mult = getUnsafe(_bumpyMultID[axisIdx], player);
@@ -77,19 +76,22 @@ class Bumpy extends Modifier {
 			24.0)) / ((scrollSpeed * mult) / 2)) * (getKeyCount() / 2.0);
 		final shift = amt * bumpyMath;
 
-		if (realAxisIdx == 1)
-			curPos.x += shift;
-		else if (realAxisIdx == 2)
-			curPos.y += shift;
-		else
-			curPos.z += shift;
+		shift += (getPercent('bumpy' + axis, player) + getPercent('bumpy' + axis + receptorName, player)) * bumpyMath;
+
+		switch (realAxis) {
+			if (realAxisIdx == 1)
+				curPos.x += shift;
+			else if (realAxisIdx == 2)
+				curPos.y += shift;
+			else
+				curPos.z += shift;
+		}
 	}
 
 	// axisIdx: 0='' 1='x' 2='y' 3='z'; realAxisIdx: 0=z 1=x 2=y
 	private inline function applyAngle(vis:VisualParameters, params:ModifierParameters, axisIdx:Int, realAxisIdx:Int) {
 		final lane = params.lane;
 		final player = params.player;
-
 		var offset = getUnsafe(_angOffID[axisIdx], player);
 		var period = getUnsafe(_angPeriodID[axisIdx], player);
 		var mult = getUnsafe(_angMultID[axisIdx], player);
@@ -109,12 +111,16 @@ class Bumpy extends Modifier {
 			24.0)) / ((scrollSpeed * mult) / 2)) * (getKeyCount() / 2.0);
 		final shift = amt * bumpyMath;
 
-		if (realAxisIdx == 1)
-			vis.angleX += shift;
-		else if (realAxisIdx == 2)
-			vis.angleY += shift;
-		else
-			vis.angleZ += shift;
+		shift += (getPercent('bumpyAngle' + axis, player) + getPercent('bumpyAngle' + axis + receptorName, player)) * bumpyMath;
+
+		switch (realAxis) {
+			if (realAxisIdx == 1)
+				vis.angleX += shift;
+			else if (realAxisIdx == 2)
+				vis.angleY += shift;
+			else
+				vis.angleZ += shift;
+		}
 	}
 
 	override public function render(curPos:Vector3, params:ModifierParameters) {
