@@ -23,8 +23,6 @@ import modchart.backend.standalone.IAdapter;
 class Psych implements IAdapter {
 	private var __fCrochet:Float = 0;
 
-	public var camera:FlxCamera = PlayState.instance.camStrum;
-
 	public function new() {
 		try {
 			setupLuaFunctions();
@@ -161,12 +159,8 @@ class Psych implements IAdapter {
 		return getDownscroll() ? FlxG.height - getStrumFromInfo(lane, player).y - Note.swagWidth : getStrumFromInfo(lane, player).y;
 	}
 
-	public function setArrowCamera(cam:FlxCamera) {
-		camera = cam;
-	}
-
 	public function getArrowCamera():Array<FlxCamera>
-		return [camera];
+		return [PlayState.instance.camStrum];
 
 	public function getCurrentScrollSpeed():Float {
 		return PlayState.instance.songSpeed * .45;
